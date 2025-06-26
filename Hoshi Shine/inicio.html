@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HoshiShine</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rosa: #ffaecc;
+      --rosa-claro: #ffeef6;
+      --rosa-oscuro: #f58eb0;
+      --morado: #b38ee0;
+      --blanco: #ffffff;
+      --fuente-titulos: 'Fredoka', sans-serif;
+      --fuente-texto: 'Poppins', sans-serif;
+      --borde-radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--fuente-texto);
+      background-color: var(--blanco);
+      color: #444;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    h2,
+    h4,
+    h5 {
+      font-family: var(--fuente-titulos);
+      color: var(--rosa-oscuro);
+    }
+
+    h3 {
+      font-family: var(--fuente-titulos);
+      color: white;
+    }
+
+
+    header {
+      background-color: var(--rosa);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 3px solid var(--rosa-oscuro);
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    .menu li a {
+      background-color: var(--rosa-claro);
+      padding: 0.5rem 1rem;
+      border-radius: var(--borde-radius);
+      color: #ca5692;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .menu li a:hover {
+      background-color: #fddae9;
+      transform: translateY(-2px);
+    }
+
+    .icono-perfil {
+      width: 32px;
+      height: 32px;
+      background-color: var(--rosa-claro);
+      border-radius: 50%;
+    }
+
+    main {
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .intro h1 {
+      color: var(--rosa-oscuro);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .intro p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--rosa-oscuro);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+    }
+.intro {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.intro .texto {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.intro .imagen {
+  flex: 1;
+  min-width: 400px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro .imagen img {
+  border-radius: var(--borde-radius);
+  max-width: 100%;
+  height: auto;
+  max-height: 400px; 
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: var(--borde-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.03);
+    }
+
+
+
+
+    .caracteristicas {
+      background-color: var(--blanco);
+      border-radius: var(--borde-radius);
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .caracteristicas h2 {
+      color: var(--morado);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .caracteristicas ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--morado);
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .caracteristicas li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .caracteristicas li:before {
+      content: "★";
+      color: var(--rosa);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .carousel-item img {
+      border-radius: var(--borde-radius);
+      max-height: 500px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+
+    .carousel-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: var(--borde-radius);
+      overflow: hidden;
+      box-shadow: 
+        0 0 0 8px var(--rosa-claro),
+        0 0 20px rgba(255, 174, 204, 0.6),
+        0 0 40px rgba(255, 174, 204, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .carousel-container:hover {
+      box-shadow: 
+        0 0 0 8px var(--rosa-claro),
+        0 0 30px rgba(255, 174, 204, 0.8),
+        0 0 50px rgba(255, 174, 204, 0.4);
+    }
+
+    .carousel-container:hover .carousel-item img {
+      transform: scale(1.02);
+    }
+
+    .carousel-indicators {
+      bottom: 20px;
+    }
+
+    .carousel-indicators button {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--rosa-claro);
+      border: 2px solid var(--rosa-oscuro);
+      margin: 0 6px;
+      transition: all 0.3s;
+    }
+
+    .carousel-indicators button.active {
+      background-color: var(--rosa-oscuro);
+      transform: scale(1.2);
+    }
+
+    .carousel-caption {
+      background: rgba(245, 142, 176, 0.7);
+      border-radius: var(--borde-radius);
+      padding: 15px;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+    }
+
+    footer {
+      background-color: var(--rosa);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      border-top: 3px solid var(--rosa-oscuro);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.8rem;
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-5px);
+      color: var(--rosa-claro);
+    }
+
+    .footer-text {
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    .banner-texto h1 {
+      font-family: var(--fuente-titulos);
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .intro .imagen img {
+      border-radius: var(--borde-radius);
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-img-top {
+      height: 400px;
+      object-fit: cover;
+    }
+.beneficios {
+    padding: 3rem 0; 
+    background-color: var(--rosa-claro);
+    margin: 2rem 0;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .beneficios-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .beneficios-grid {
+    display: flex; 
+    gap: 1rem;
+    padding: 0 2rem;
+    width: max-content; 
+    margin: 0 auto;
+  }
+
+  .beneficio-card {
+    flex: 0 0 280px; 
+    background: white;
+    border-radius: 18px;
+    padding: 1.8rem 1.5rem;
+    border-top: 5px solid var(--color);
+    box-shadow: 0 6px 20px rgba(245, 142, 176, 0.15);
+    transition: all 0.4s;
+    min-height: 200px; 
+  }
+
+
+  .beneficio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(245, 142, 176, 0.25);
+  }
+
+  .beneficio-card h3 {
+    color: var(--color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-family: var(--fuente-titulos);
+  }
+
+  .beneficio-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .beneficio-card .beneficio-icono {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 2.5rem;
+    opacity: 0.1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  }
+
+  .beneficio-card:hover .beneficio-icono {
+    opacity: 0.3;
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+
+
+  @media (max-width: 1200px) {
+    .beneficio-card {
+      flex: 0 0 240px; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .beneficios {
+      padding: 2rem 0;
+    }
+    
+    .beneficios-grid {
+      padding: 0 1rem;
+      gap: 0.8rem;
+    }
+    
+    .beneficio-card {
+      flex: 0 0 220px;
+      min-height: 180px;
+      padding: 1.2rem;
+    }
+    
+    .beneficio-card h3 {
+      font-size: 1.1rem;
+    }
+  }
+    
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .menu {
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu li a {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
+      }
+
+      .social-icons {
+        gap: 15px;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+      }
+
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .que-encontraras,
+      .caracteristicas {
+        padding: 1.5rem;
+      }
+
+      .carousel-container {
+        max-width: 95%;
+        box-shadow: 
+          0 0 0 4px var(--rosa-claro),
+          0 0 15px rgba(255, 174, 204, 0.5);
+      }
+
+      .carousel-caption {
+        width: 90%;
+        bottom: 20px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="bg-light" style="background-color: #FFACC6 !important;">
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    
+    <img src="../imagenes/Logo.jpeg" alt="Logo" class="rounded-circle" width="60" height="60">
+
+    <div class="d-flex gap-4">
+
+      <a class="btn btn-light rounded-pill px-4 fw-semibold" href="inicio.html" style="color:#FFACC6">Inicio</a>
+
+      <a class="btn btn-light rounded-pill px-4 fw-semibold" href="PorqueHoshi.html" style="color:#FFACC6">¿Por qué Hoshi Shine?</a>
+
+      <div class="dropdown">
+        <button class="btn btn-light rounded-pill px-4 fw-semibold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#FFACC6">
+          Tienda
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../productos.html">Productos principales</a></li>
+          <li><a class="dropdown-item" href="../productosec.html">Productos secundarios</a></li>
+        </ul>
+      </div>
+
+      <button class="btn btn-light rounded-pill px-4 fw-semibold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFACC6;">Contacto</button>
+            <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../practica en clases/preguntas.html">Preguntas frecuentes</a></li>
+          <li><a class="dropdown-item" href="../ayuda.html">Contactanos</a></li>
+        </ul>
+    </div>
+
+    <img src="../imagenes/usuario2.png" alt="Usuario" class="rounded-circle" width="60" height="60">
+    
+  </div>
+</div>
+
+  <main>
+    
+    <section class="hero-banner">
+      <img src="img/bolso2.jpg" alt="Banner HoshiShine">
+      <div class="banner-texto">
+        <h1>Hoshi Shine</h1>
+      </div>
+    </section>
+
+    <section class="intro d-flex flex-column flex-md-row align-items-center justify-content-center gap-4">
+      <div class="texto col-md-6 text-center text-md-start">
+        <p>
+          HoshiShine es una marca creada con amor y dedicación por emprendedoras bolivianas que creen en el poder de los detalles. Nuestro propósito va más allá de vender bolsos: queremos ofrecer piezas únicas que conecten contigo, que reflejen tu estilo y te acompañen en tu rutina diaria.<br>
+          Nos especializamos en la importación de bolsos y accesorios cuidadosamente seleccionados desde China, asegurándonos de que cada producto cumpla con nuestros estándares de calidad, originalidad y ternura. Cada artículo que ofrecemos ha sido elegido pensando en ti: en tu comodidad, tu personalidad y tus ganas de brillar sin perder autenticidad.<br>
+        </p>
+      </div>
+      <div class="imagen col-md-5">
+        <img src="img/bolso rosa.jpg" alt="Bolso decorativo" class="img-fluid rounded">
+      </div>
+    </section>
+
+<section class="beneficios">
+  <h2 class="text-center mb-5"> ¿Por qué amarás nuestros bolsos?</h2>
+  <div class="beneficios-container"> 
+    <div class="beneficios-grid">
+     
+      <div class="beneficio-card" style="--color: #FFAECC;">
+        <h3>Diseños Únicos</h3>
+        <p>Ternura + estilo en piezas que nadie más tendrá</p>
+        <div class="beneficio-icono"></div>
+      </div>
+      
+      <div class="beneficio-card" style="--color: #F58EB0;">
+        <h3>Prácticos y Espaciosos</h3>
+        <p>Organizados para llevar todo lo que necesitas</p>
+        <div class="beneficio-icono"></div>
+      </div>
+     
+      <div class="beneficio-card" style="--color: #B38EE0;">
+        <h3>Materiales Premium</h3>
+        <p>Suaves al tacto y resistentes para el día a día</p>
+        <div class="beneficio-icono"></div>
+      </div>
+      
+      <div class="beneficio-card" style="--color: #FF8EBA;">
+        <h3>Accesorios Adorables</h3>
+        <p>Llaveros y charms que los hacen especiales</p>
+        <div class="beneficio-icono"></div>
+      </div>
+     
+      <div class="beneficio-card" style="--color: #D18EE0;">
+        <h3>Calidad Garantizada</h3>
+        <p>Productos importados con altos estándares</p>
+        <div class="beneficio-icono"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="caracteristicas">
+      <h2>Productos destacados</h2>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/2.jpeg" class="card-img-top" alt="Producto 1">
+            <div class="card-body">
+              <h5 class="card-title">StarDream</h5>
+              <p class="card-text">Un diseño vibrante con detalles kawaii.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/meteor pop.jpg" class="card-img-top" alt="Producto 2">
+            <div class="card-body">
+              <h5 class="card-title">Meteor pop</h5>
+              <p class="card-text">Ideal para clases o salidas casuales.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/llaveros.jpg" class="card-img-top" alt="Producto 3">
+            <div class="card-body">
+              <h5 class="card-title">Teddy Fluffies</h5>
+              <p class="card-text">Compacto, adorable y con mucho estilo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container my-4">
+      <div class="carousel-container">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/3.jpeg" alt="Bolso 1" class="d-block w-100">
+              <div class="carousel-caption">
+                <h3>Colección Primavera</h3>
+                <p>Nuevos diseños para la temporada</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/bolso blanco2.jpg" alt="Bolso 2" class="d-block w-100">
+              <div class="carousel-caption">
+                <h3>Bolsos Espaciosos</h3>
+                <p>Perfectos para tu día a día</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/1.jpeg" alt="Bolso 3" class="d-block w-100">
+              <div class="carousel-caption">
+                <h3>Accesorios Adorables</h3>
+                <p>Detalles que marcan la diferencia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="footer-text">Inspira, crea y brilla</p>
+  </footer>
+</body>
+</html>

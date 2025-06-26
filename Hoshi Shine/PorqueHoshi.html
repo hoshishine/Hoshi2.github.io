@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Por qué HoshiShine? | HoshiShine</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rosa: #ffaecc;
+      --rosa-claro: #ffeef6;
+      --rosa-oscuro: #f58eb0;
+      --morado: #b38ee0;
+      --blanco: #ffffff;
+      --fuente-titulos: 'Fredoka', sans-serif;
+      --fuente-texto: 'Poppins', sans-serif;
+      --borde-radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--fuente-texto);
+      background-color: var(--blanco);
+      color: #444;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--fuente-titulos);
+    }
+
+    h2, h4, h5 {
+      color: var(--rosa-oscuro);
+    }
+
+    h3 {
+      color: #f58eb0
+    }
+
+
+    header {
+      background-color: var(--rosa);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 3px solid var(--rosa-oscuro);
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    .menu li a {
+      background-color: var(--rosa-claro);
+      padding: 0.5rem 1rem;
+      border-radius: var(--borde-radius);
+      color: #ca5692;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .menu li a:hover {
+      background-color: #fddae9;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: var(--rosa);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      border-top: 3px solid var(--rosa-oscuro);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.8rem;
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-5px);
+      color: var(--rosa-claro);
+    }
+
+    .footer-text {
+      margin-top: 0.5rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+ 
+    main {
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border-radius: var(--borde-radius);
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    .banner-texto h1 {
+      font-family: var(--fuente-titulos);
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .historia-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .historia-texto {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .historia-imagen {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .historia-imagen img {
+      max-width: 100%;
+      border-radius: var(--borde-radius);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nuestra-historia {
+      color: var(--rosa-oscuro);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--rosa-oscuro);
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .quote::before, .quote::after {
+      content: '"';
+      font-size: 2rem;
+      color: var(--morado);
+    }
+
+    .mision-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .mision, .vision {
+      flex: 1;
+      min-width: 300px;
+      background-color: var(--rosa-claro);
+      padding: 2rem;
+      border-radius: var(--borde-radius);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mision::before, .vision::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--rosa), var(--morado));
+    }
+
+    .mision h2 {
+      color: var(--rosa-oscuro);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .vision h2 {
+      color: var(--morado);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .valores {
+      background-color: var(--blanco);
+      border-radius: var(--borde-radius);
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .valores h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--morado);
+    }
+
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .valor-card {
+      background-color: var(--rosa-claro);
+      padding: 1.5rem;
+      border-radius: var(--borde-radius);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .valor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .valor-icono {
+      font-size: 2.5rem;
+      color: var(--rosa-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .valor-card h3 {
+      color: var(--morado);
+      margin-bottom: 0.8rem;
+    }
+
+    .equipo {
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .equipo h2 {
+      margin-bottom: 2rem;
+      color: var(--rosa-oscuro);
+    }
+
+    .equipo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .miembro {
+      max-width: 200px;
+    }
+
+    .miembro img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--rosa);
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .historia-section {
+        flex-direction: column;
+      }
+      
+      .historia-texto, .historia-imagen {
+        min-width: 100%;
+      }
+      
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .menu {
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu li a {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
+      }
+
+      .social-icons {
+        gap: 15px;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+      }
+
+      .banner-texto h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="bg-light" style="background-color: #FFACC6 !important;">
+  <div class="container d-flex justify-content-between align-items-center py-3">
+    
+    <img src="../imagenes/Logo.jpeg" alt="Logo" class="rounded-circle" width="60" height="60">
+
+    <div class="d-flex gap-4">
+
+      <a class="btn btn-light rounded-pill px-4 fw-semibold" href="inicio.html" style="color:#FFACC6">Inicio</a>
+
+      <a class="btn btn-light rounded-pill px-4 fw-semibold" href="PorqueHoshi.html" style="color:#FFACC6">¿Por qué Hoshi Shine?</a>
+
+      <div class="dropdown">
+        <button class="btn btn-light rounded-pill px-4 fw-semibold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#FFACC6">
+          Tienda
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../productos.html">Productos principales</a></li>
+          <li><a class="dropdown-item" href="../productosec.html">Productos secundarios</a></li>
+        </ul>
+      </div>
+
+      <button class="btn btn-light rounded-pill px-4 fw-semibold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFACC6;">Contacto</button>
+            <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../practica en clases/preguntas.html">Preguntas frecuentes</a></li>
+          <li><a class="dropdown-item" href="../ayuda.html">Contactanos</a></li>
+        </ul>
+    </div>
+
+    <img src="../imagenes/usuario2.png" alt="Usuario" class="rounded-circle" width="60" height="60">
+    
+  </div>
+</div>
+  <main>
+    
+    <section class="hero-banner">
+      <img src="img/bolso 3.jpg" alt="Banner HoshiShine">
+      <div class="banner-texto">
+        <h1>Nuestra Historia</h1>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="historia-section">
+        <div class="historia-texto">
+          <h2 class="nuestra-historia">¿Por qué HoshiShine?</h2>
+          <p>Somos un grupo de amigas y emprendedoras que soñó con algo más: una tienda diferente, donde lo útil también fuera bonito. Inspiradas por la estética asiática y los detalles que enamoran, creamos HoshiShine.</p>
+          
+          <h3>Nuestra Historia</h3>
+          <p>Todo empezó con una idea simple: importar bolsos originales a Bolivia. Queríamos ofrecer opciones lindas, accesibles y con un toque especial. Así nació HoshiShine, que significa "brillo de estrella", como el que queremos que sientas al usar nuestros productos.</p>
+          
+          <p>Lo que comenzó como un pequeño proyecto entre amigas, hoy es una marca reconocida por su selección cuidadosa de productos importados. Cada artículo que ofrecemos ha sido elegido pensando en combinar calidad, diseño y ese toque especial que nos caracteriza.</p>
+        </div>
+        <div class="historia-imagen">
+          <img src="img/bolsos variedad.jpg" alt="Equipo HoshiShine">
+        </div>
+      </div>
+
+      <div class="quote">
+        "Especialistas en importar productos únicos que combinan calidad y ternura, para que brilles en tu día a día"
+      </div>
+
+      <div class="mision-vision">
+        <div class="mision">
+          <h2>Misión</h2>
+          <p>Seleccionar y ofrecer los mejores productos importados, buscando siempre ese equilibrio perfecto entre calidad, diseño kawaii y funcionalidad. Queremos que cada artículo HoshiShine que elijas te haga sentir especial y único.</p>
+        </div>
+        <div class="vision">
+          <h2>Visión</h2>
+          <p>Convertirnos en la tienda referente de moda kawaii importada en Bolivia, reconocida por nuestra cuidadosa selección de productos y atención personalizada. Aspiramos a ser el destino favorito para quienes buscan productos únicos con ese toque especial.</p>
+        </div>
+      </div>
+
+<section class="valores">
+    <h2>Nuestros Valores Fundamentales</h2>
+    <div class="valores-grid">
+        <div class="valor-card">
+            <div class="valor-icono">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Pasión por los detalles</h3>
+            <p>Nos obsesionamos con cada detalle, desde la costura hasta los accesorios, para ofrecerte productos que superen tus expectativas.</p>
+        </div>
+        <div class="valor-card">
+            <div class="valor-icono">
+                <i class="fas fa-gem"></i>
+            </div>
+            <h3>Autenticidad</h3>
+            <p>Cada pieza refleja nuestra esencia: alegre, única y llena de personalidad. No seguimos modas, creamos estilo.</p>
+        </div>
+        <div class="valor-card">
+            <div class="valor-icono">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Conexión emocional</h3>
+            <p>Más que vender productos, creamos experiencias y recuerdos que acompañan tus momentos especiales.</p>
+        </div>
+        <div class="valor-card">
+            <div class="valor-icono">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Crecimiento conjunto</h3>
+            <p>Creemos en crecer junto a nuestra comunidad, aprendiendo de ustedes y evolucionando para servirles mejor.</p>
+        </div>
+    </div>
+</section>
+
+      <section class="equipo">
+        <h2>Conoce al equipo</h2>
+        <p>El corazón detrás de HoshiShine</p>
+        
+        <div class="equipo-grid">
+          <div class="miembro">
+            <img src="img/bolso blanco.jpg" alt="Fundadora 1">
+            <h4>Cielo</h4>
+            <p>Co-fundadora</p>
+          </div>
+          <div class="miembro">
+            <img src="img/bolso blanco2.jpg" alt="Fundadora 2">
+            <h4>Melvi</h4>
+            <p>Co-fundadora</p>
+          </div>
+          <div class="miembro">
+            <img src="img/bolso flores.jpg" alt="Diseñadora">
+            <h4>Rosario</h4>
+            <p>Selección de productos</p>
+          </div>
+        </div>
+      </section>
+
+
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="footer-text">Inspira, crea y brilla con HoshiShine</p>
+  </footer>
+</body>
+</html>
